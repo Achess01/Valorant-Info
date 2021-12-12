@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// eslint-disable-next-line import/namespace
 import ShowAgents from "./ShowAgents";
 
 const endpoint = "https://valorant-api.com/v1/agents";
