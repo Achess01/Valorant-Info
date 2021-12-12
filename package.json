@@ -36,5 +36,13 @@
   },
   "browserslist": [
     "last 2 Chrome versions"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Achess01/Valorant-Info.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Achess01/Valorant-Info/issues"
+  },
+  "homepage": "https://github.com/Achess01/Valorant-Info#readme"
 }
