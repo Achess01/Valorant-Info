@@ -1,11 +1,11 @@
 const Agent = ({agent}) =>{
     return (
-        <div className="Agent">
+        <article className="Agent">
             <picture>
-                <img src={agent.displayIcon} alt={agent.displayName} width="150px" />
+                <img src={agent.displayIcon} alt={agent.displayName} width="128px" />
             </picture>
-            <h2>{agent.displayName}</h2>
-        </div>
+            <h3>{agent.displayName}</h3>
+        </article>
     )
 }
 

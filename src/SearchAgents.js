@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ShowAgents from "./ShowAgents";
 
-const endpoint = "https://valorant-api.com/v1/agents";
+const endpoint = "https://valorant-api.com/v1/agents?language=es-MX";
 
 const SearchAgents = () => {
   const [isLoading, setLoading] = useState(true);
@@ -14,7 +14,14 @@ const SearchAgents = () => {
       const json = await res.json();
       const playableAgents = json.data.filter(
         (agent) => agent.isPlayableCharacter
-      );
+      ).sort((agent1, agent2) => {
+        if(agent1.displayName > agent2.displayName){
+          return 1;
+        }
+        else{
+          return -1;
+        }
+      });
       setAgents(playableAgents);
 
       setLoading(false);
@@ -24,8 +31,11 @@ const SearchAgents = () => {
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
-  return (    
+  return (   
+    <div className="agents">
+      <h1>Agentes</h1>
       <ShowAgents agents={agents}/>    
+    </div> 
   );
 };
 
