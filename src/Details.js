@@ -9,8 +9,8 @@ const Details = () =>{
     const [isLoading, setLoading] = useState(true);
     const [agent, setAgent] = useState({});
     const [hasFound, setFound] = useState(false);
-    const [audio] = useState(new Audio());
-
+    const [audio] = useState(new Audio());    
+    
     useEffect(()=>{
         getAgent();
         async function getAgent(){
@@ -19,7 +19,7 @@ const Details = () =>{
                 const json = await res.json();
                 await setAgent(json.data);
                 setFound(true);
-                audio.src = json.data.voiceLine.mediaList[0].wave;
+                audio.src = json.data.voiceLine.mediaList[0].wave;                        
             }
             setLoading(false);            
             
@@ -34,22 +34,28 @@ const Details = () =>{
     }
     return (
         <article className="agent-details">
-            <div className="details-role">
-                <h3>Rol: <span>{agent.role.displayName}</span></h3>
+            <div className="details-image-rol">                                
                 <picture>
-                    <img src={agent.role.displayIcon} alt={agent.role.displayName} 
-                    width="75px" />
-                </picture>
-            </div>
-            <picture>
-                <img src={agent.fullPortrait} alt={agent.displayName} height="480px"/>
-            </picture>
-            <div className="details-info">
-                <h1>{agent.displayName}</h1>
+                    <img 
+                        src={agent.fullPortrait} 
+                        alt={agent.displayName} 
+                        height="480px"                    
+                    />
+                </picture>            
                 <button 
                     onClick={()=> audio.play()}>
                     Escuchar
                 </button>
+            </div>
+            <div className="details-info">
+            <div className="rol">
+                    <h3>{agent.role.displayName}</h3>
+                    <picture>
+                        <img src={agent.role.displayIcon} alt={agent.role.displayName} 
+                        width="60px" />
+                    </picture>
+                </div>
+                <h1>{agent.displayName}</h1>
                 <p>{agent.description}</p>
                 <article className="agent-abilities">
                         {agent.abilities.map( ability =>{
@@ -59,12 +65,14 @@ const Details = () =>{
                                         ability.displayIcon ? (                                            
                                             <picture>
                                                 <img src={ability.displayIcon} alt={ability.displayName}
-                                                width="75px" />
+                                                width="60px" />
                                             </picture>
                                         ):(<span></span>) 
-                                    }                                                                        
-                                    <strong>{ability.displayName}</strong>                                    
-                                    <p>{ability.description}</p>
+                                    } 
+                                    <div className="info-ability">                                    
+                                        <strong>{ability.displayName}</strong>                                    
+                                        <p>{ability.description}</p>
+                                    </div>
                                 </div>
                             );
                         })}

@@ -60,3 +60,41 @@ body {
 .Agent > picture > img {
   height: 100%;
 }
+
+.agent-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  max-width: 1050px;
+  font-size: 14px;
+  margin: 20px auto;
+  background-color: rgb(64, 71, 79);
+  padding: 25px 25px 20px 0;
+}
+
+.details-image-rol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+
+.details-info > .rol {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.details-info > .agent-abilities > .ability {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ability > picture {
+  margin-right: 15px;
+}
