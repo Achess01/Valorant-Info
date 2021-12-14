@@ -1,12 +1,16 @@
-const Agent = ({agent}) =>{
-    return (
-        <article className="Agent">
-            <picture>
-                <img src={agent.displayIcon} alt={agent.displayName} width="128px" />
-            </picture>
-            <h3>{agent.displayName}</h3>
-        </article>
-    )
-}
+import { Link } from "react-router-dom";
+
+const Agent = ({ icon, name, uuid }) => {
+  return (
+    <Link to={`/details/${uuid}`}>
+      <article className="Agent">
+        <picture>
+          <img src={icon} alt={name} width="128px" />
+        </picture>
+        <h3>{name}</h3>
+      </article>
+    </Link>
+  );
+};
 
 export default Agent;
