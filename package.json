@@ -2,7 +2,7 @@
   "name": "valorantinfo",
   "version": "1.0.0",
   "description": "Consuming valorant API",
-  "source": "src/App.js",
+  "source": "./src/App.js",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
@@ -50,5 +50,5 @@
   "bugs": {
     "url": "https://github.com/Achess01/Valorant-Info/issues"
   },
-  "homepage": "https://achess01.github.io/Valorant-Info"
+  "homepage": "https://achess01.github.io/Valorant-Info/"
 }
