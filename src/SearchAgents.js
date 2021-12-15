@@ -1,17 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ShowAgents from "./ShowAgents";
+import { LanguageContext } from "./LanguageContext";
 
 const endpoint =
-  "https://valorant-api.com/v1/agents?language=es-MX&isplayableCharacter=true";
+  "https://valorant-api.com/v1/agents?isplayableCharacter=true&language=:LANG";
 
 const SearchAgents = () => {
   const [isLoading, setLoading] = useState(true);
   const [agents, setAgents] = useState([]);
+  const [lang] = useContext(LanguageContext);
 
   useEffect(() => {
     requestAgents();
     async function requestAgents() {
-      const res = await fetch(endpoint);
+      const res = await fetch(endpoint.replace(":LANG", lang));
       const json = await res.json();
       const playableAgents = json.data.sort((agent1, agent2) => {
         if (agent1.displayName > agent2.displayName) {
@@ -24,7 +26,7 @@ const SearchAgents = () => {
 
       setLoading(false);
     }
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [lang]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (isLoading) {
     return <h2>Loading...</h2>;
