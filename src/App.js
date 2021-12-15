@@ -11,7 +11,7 @@ const App = () => {
   const lang = useState(languages[0].lang);
   return (
     <LanguageContext.Provider value={lang}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Header />
         <Routes>
           <Route path="/" element={<SearchAgents />} />

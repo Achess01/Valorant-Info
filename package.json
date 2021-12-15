@@ -2,11 +2,11 @@
   "name": "valorantinfo",
   "version": "1.0.0",
   "description": "Consuming valorant API",
-  "source": "./src/App.js",
+  "source": "./src/index.html",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build": "parcel build src/index.html",
+    "build": "rm -rf dist/* && parcel build src/index.html --public-url ./",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "dev": "parcel src/index.html"
