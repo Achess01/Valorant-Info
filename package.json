@@ -2,8 +2,11 @@
   "name": "valorantinfo",
   "version": "1.0.0",
   "description": "Consuming valorant API",
-  "main": "index.js",
+  "source": "src/App.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "build": "parcel build src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "dev": "parcel src/index.html"
@@ -27,12 +30,14 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^3.2.3",
     "parcel": "^2.0.1",
     "prettier": "^2.5.1"
   },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router": "^6.1.1",
     "react-router-dom": "^6.1.1"
   },
   "browserslist": [
@@ -45,5 +50,5 @@
   "bugs": {
     "url": "https://github.com/Achess01/Valorant-Info/issues"
   },
-  "homepage": "https://github.com/Achess01/Valorant-Info#readme"
+  "homepage": "https://achess01.github.io/Valorant-Info"
 }
