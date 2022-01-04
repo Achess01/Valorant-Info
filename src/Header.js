@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { LanguageContext, languages } from "./LanguageContext";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 
 const Header = () => {
   const [lang, setLang] = useContext(LanguageContext);
