@@ -15,7 +15,7 @@ const App = () => {
       <BrowserRouter basename="/Valorant-Info">
         <Header />
         <Routes>
-          <Route path="/" element={<SearchAgents />} />
+          <Route path="" element={<SearchAgents />} />
           <Route path="/details/:uuid" element={<Details />} />
         </Routes>
         <Footer />
