@@ -6,10 +6,11 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build": "rm -rf dist/* && parcel build src/index.html --public-url ./",
+    "build": "rm -rf dist/* && parcel build src/index.html --public-url ./ && npm run copy",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "dev": "parcel src/index.html"
+    "dev": "parcel src/index.html",
+    "copy": "cp _redirects dist/"
   },
   "keywords": [
     "Valorant",
