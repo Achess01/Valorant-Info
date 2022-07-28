@@ -12,7 +12,7 @@ const App = () => {
   const lang = useState(languages[0].lang);
   return (
     <LanguageContext.Provider value={lang}>
-      <BrowserRouter basename="Valorant-Info">
+      <BrowserRouter basename="/Valorant-Info">
         <Header />
         <Routes>
           <Route path="/" element={<SearchAgents />} />
