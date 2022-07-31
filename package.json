@@ -6,7 +6,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build": "rm -rf dist/* && parcel build src/index.html --public-url '.' && npm run copy",
+    "build": " rm -rf .parcel-cache && rm -rf dist/* && parcel build src/index.html --public-url '.' && npm run copy",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "dev": "parcel src/index.html",
