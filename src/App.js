@@ -14,9 +14,9 @@ const App = () => {
     <LanguageContext.Provider value={lang}>
       <BrowserRouter basename="/Valorant-Info">
         <Header />
-        <Routes>
+        <Routes path="/">
           <Route path="" element={<SearchAgents />} />
-          <Route path="/details/:uuid" element={<Details />} />
+          <Route path="details/:uuid" element={<Details />} />
         </Routes>
         <Footer />
       </BrowserRouter>
