@@ -23,7 +23,7 @@ const Header = () => {
           })}
         </select>
         <nav>
-          <Link to="/">
+          <Link to="">
             <strong>Valorant-Info</strong>
           </Link>
         </nav>
