@@ -1,7 +1,7 @@
 import { StrictMode, useState } from "react";
 import ReactDOM from "react-dom";
 // import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import SearchAgents from "./SearchAgents";
 import Details from "./Details";
 import Header from "./Header";
@@ -12,7 +12,7 @@ const App = () => {
   const lang = useState(languages[0].lang);
   return (
     <LanguageContext.Provider value={lang}>
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <Routes>
           <Route path="/">
@@ -21,7 +21,7 @@ const App = () => {
           </Route>
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </LanguageContext.Provider>
   );
 };
